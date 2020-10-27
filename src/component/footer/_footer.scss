@@ -1,0 +1,12 @@
+.footer{
+    padding-top: $spacer/2;
+    padding-bottom: $spacer/2;
+    font-size: 12px;
+    line-height: 14px;
+    height: 54px;
+    
+    &__copyright{
+        font-size: 12px;
+        line-height: 14px;
+    }
+}

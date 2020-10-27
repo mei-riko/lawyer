@@ -1,0 +1,24 @@
+.input{
+    background-color: inherit;
+    color: $white;
+    border: 1px solid $border-color;
+    padding: $spacer/3 $spacer/2;
+    margin-bottom: $spacer/3;
+    transition: .4s;
+
+    &::placeholder{
+        transition: .4s;
+        color: $grey;
+    }
+    &:hover, &:focus{
+        border-color: $border-color;
+        outline: none;
+    }
+    &:focus::placeholder{
+        opacity: 0;
+    }
+    // Состояние
+    &--full{
+        width: 100%;
+    }
+}

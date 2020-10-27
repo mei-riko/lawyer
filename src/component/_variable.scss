@@ -1,0 +1,105 @@
+$white                : #ffffff;
+$black                : #311011;
+$red                  : #953634;
+
+$light-grey           : #faf7f4;
+$grey                 : #e7ded1;
+$dark-grey            : #cbc4b2;
+
+$border-color         : #faf7f4;
+$body-color           : $white;
+
+$link-color           : $black !default;
+$link-hover-color     : $red !default;
+$link-decoration      : none !default;
+$link-hover-decoration: underline !default;
+
+$grid-columns         : 12 !default;
+$grid-gutter-width    : 40px !default;
+
+$grid-breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  xl: 1600px
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 740px,
+  lg: calc(100% - 180px),
+  xl: calc(100% - 240px),
+  hd: calc(100% - 360px),
+) !default;
+
+$font-size-base       : 1rem;
+$font-weight-base     : 200;
+$line-height-base     : 1.4;
+
+$font-family-heading  : "Alice", sans-serif;
+$font-family-base     : "Raleway", "Helvetica Neue", Arial,  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,   "Liberation Mono",   "Courier New",    monospace !default;
+
+$font-size: (
+  xs: 0,
+  sm: 13px,
+  md: 14px,
+  lg: 16px,
+  xl: 16px
+) !default;
+
+$font-weight-heading: 700;
+
+$font-weight-light  : 300;
+$font-weight        : 400;
+$font-weight-bolder : 600;
+$font-weight-bold   : 800;
+
+$line-height        : 1.6;
+$line-height-heading: 1.1;
+
+$dt-font-weight: $font-weight-bold !default;
+
+$spacer : 40px!default;
+$spacers: ()  !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+  (
+    0: 0,
+    1: $spacer/4,         // 10px
+    2: $spacer/2,         // 20px
+    3: $spacer,           // 40px
+    4: ($spacer * 1.5),   // 60px
+  ),
+  $spacers
+);
+
+$headings-margin-bottom: $spacer / 2 !default;
+$headings-font-family  : null !default;
+$headings-font-weight  : 500 !default;
+$headings-line-height  : 1.2 !default;
+$headings-color        : null !default;
+
+$paragraph-margin-bottom: 40px !default;
+
+$table-cell-padding   : 10px !default;
+$table-cell-padding-sm: 6px !default;
+$table-caption-color  : #242424 !default;
+
+$label-margin-bottom: 10px;
+
+$enable-grid-classes              : true !default;
+$enable-pointer-cursor-for-buttons: true !default;
+
+// Utilities
+
+$displays : none,   inline,   inline-block, block, table, table-row, table-cell, flex, inline-flex !default;
+$overflows: auto,   hidden !default;
+$positions: static, relative, absolute,     fixed, sticky !default;
+
+
+// Printing
+
+$print-page-size     : a3 !default;
+$print-body-min-width: map-get($grid-breakpoints, "lg") !default;

@@ -1,0 +1,23 @@
+.radio{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    
+    &__input{
+        display: none;
+
+        &:checked + .checkbox__label:after {
+            content: '';
+            display: block;
+        }
+    }
+    &__label{
+        position: relative;
+        cursor: pointer;
+
+        &:before{
+            content:'';
+            display: block;
+        }
+    }
+}

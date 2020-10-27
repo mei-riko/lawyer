@@ -1,0 +1,24 @@
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Index Page
+        link(href='./css/style.css', rel='stylesheet')
+
+    body
+        script(src="http://code.jquery.com/jquery-3.3.1.min.js")
+        include component/header/header_index.pug
+        section.container
+            .content-main(style="background-image:url('./css/bg-main.png'); ")
+                .content-main__row.row.align-items-center.justify-content-center
+                    .col-8.col-sm-12
+                        img.content-main__logo.img-fluid(src="../icon/logo.png")
+                        h1.content-main__title Адвокатское бюро «Марсово поле»
+            .navbar
+                a.navbar__item(href="person.html") Адвокаты-партнеры
+                a.navbar__item(href="service.html") Практики бюро
+                a.navbar__item(href="contact.html") Контакты
+        include component/footer/footer.pug
+        script(src="./js/jquery.inputmask.js")
+        script(src="./js/app.min.js")

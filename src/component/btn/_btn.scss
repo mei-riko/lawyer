@@ -1,0 +1,19 @@
+.btn{
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    letter-spacing: 1px;
+    font-family: $font-family-heading;
+    padding: 8px 36px 10px;
+    
+    transition: all .4s;
+
+    &:hover, &:focus{
+        text-decoration: none;
+    }
+
+    &--full{
+        width: 100%;
+    }
+}

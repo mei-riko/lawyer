@@ -1,0 +1,45 @@
+.navbar{
+    @extend .row;
+    @extend .no-gutters;
+
+    &__item{
+        position: relative;
+        @extend .col-4;
+
+        font-family: $font-family-heading;
+        font-size: map-get($map: $font-size, $key: "sm");
+        text-transform: uppercase;
+        text-align: center;
+
+        height: 60px;
+
+        padding-top: $spacer/2;
+        padding-bottom: $spacer/2;
+
+        background-color: $grey;
+        color: $black;
+        border-right: 1px solid $light-grey;
+
+        &:after{
+            content: "";
+            display: block;
+
+            position: absolute;
+            top: 8px;
+            left: 8px;
+
+            width: calc(100% - 16px);
+            height: calc(100% - 16px);
+
+            border: 1px solid $light-grey;
+        }
+        &:last-child{
+            border-right: none;
+        }
+        &:hover, &:focus{
+            background-color: $dark-grey;
+            color: $black;
+            text-decoration: none;
+        }
+    }
+}

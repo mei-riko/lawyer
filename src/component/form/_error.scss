@@ -1,0 +1,14 @@
+// Для ошибок в MODx
+.ajax_form span.error{
+    color: $red!important;
+    font-size: 12px;
+}
+.ajax_form .error-inverse{
+    color: $white!important;
+}
+.ajax_form .form__input.error{
+    border-color: $red;
+}
+.ajax_form .form-validation.error{
+    color: $red!important
+}

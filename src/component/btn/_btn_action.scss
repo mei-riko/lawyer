@@ -1,0 +1,8 @@
+.btn_action{
+    background: $bg-secondary;
+    color: $white;
+    &:hover, &:focus{
+        background: lighten($color: $bg-secondary, $amount: 4);
+        color: $white;
+    }
+}

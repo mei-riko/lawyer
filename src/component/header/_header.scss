@@ -1,0 +1,56 @@
+.header{
+    &__btn{
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+        background-color: $white;
+        border: 1px solid $grey;
+        transition: .4s;
+
+        margin-bottom: $spacer/2;
+
+        &_nav{
+            position: fixed;
+            top: $spacer/2;
+            left: 170px;
+            z-index: 101;
+            margin-bottom: 0;
+        }
+        &_location{
+            margin-bottom: 0;
+        }
+
+        &:hover, &:focus{
+            background-color: $light-grey;
+        }
+    }
+    &__group{
+        position: fixed;
+        right: 170px;
+        bottom: $spacer/2;
+        z-index: 101;
+
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .header{
+        &__btn{
+            &_nav{
+                left: 110px;
+            }
+        }
+        &__group{
+            right: 110px;
+        }
+    }
+  }

@@ -1,0 +1,37 @@
+mixin advantage(name, id)
+    .col-4.col-lg-6.col-sm-4
+        a.advantage.advantage_modal(data-fancybox="advantage" data-src=id href="javascript;")
+            span.advantage__button
+                svg.advantage__icon(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(d="M15 13H14V10.7L7.3 17.4L6.6 16.7L13.3 10H11V9H15V13ZM20 16H11L12 15H19V5H9V12L8 13V4H20V16ZM6 9V10H4V20H14V18H15V21H3V9H6Z" fill="#EF002B")
+            h4.advantage__title= name
+            if block
+                block
+            else
+                p.advantage__intro Lorem ipsum dolor sit amet. Itaque earum rerum facilis est laborum. Esse, quam nihil molestiae non recusandae.
+
+mixin product(name, id)
+    .col-3.col-lg-4.col-sm-3.mb-1
+        a.product-item(data-fancybox data-src=id href="javascript;")
+            .product-item__image(style!=attributes.style)
+            p.product-item__title= name
+            p.product-item__link Больше о продукции —
+            svg.product-item__icon(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(d="M15 13H14V10.7L7.3 17.4L6.6 16.7L13.3 10H11V9H15V13ZM20 16H11L12 15H19V5H9V12L8 13V4H20V16ZM6 9V10H4V20H14V18H15V21H3V9H6Z" fill="#EF002B")
+
+mixin link-modal(name)
+    a.link-modal(href="javascript;" data-fancybox="" data-src="#info")(class!=attributes.class)
+        svg.link-modal__icon(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(d="M15 13H14V10.7L7.3 17.4L6.6 16.7L13.3 10H11V9H15V13ZM20 16H11L12 15H19V5H9V12L8 13V4H20V16ZM6 9V10H4V20H14V18H15V21H3V9H6Z" fill="#EF002B")
+        span= name
+
+mixin step(id, name, intro)
+    .col-3.col-sm-12
+        .step(class!=attributes.class)
+            span.step__number= id
+                <svg class="step__icon" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4.5" y="4.5" width="16" height="16" stroke="#D4031D"/>
+                    <rect x="9" y="9" width="7" height="7" fill="#D4031D"/>
+                </svg>
+            p.step__title= name
+            p.step__intro= intro
