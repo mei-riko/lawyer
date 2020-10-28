@@ -1,0 +1,25 @@
+.breadcrumbs{
+    font-size: 12px;
+    line-height: 1.2;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    list-style: none;
+
+    &__link{
+        position: relative;
+        font-weight: $font-weight-bolder;
+        color: darken($color: $dark-grey, $amount: 8);
+
+        &:after{
+            content: "—";
+            display: inline-block;
+            color: $dark-grey;
+            margin: 0 4px;
+        }
+    }
+    &__item{
+        color: $dark-grey;
+    }
+}

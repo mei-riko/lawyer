@@ -1,4 +1,12 @@
 import $ from 'jquery'
+import '../../node_modules/popper.js/dist/umd/popper';
+import '../../node_modules/bootstrap/js/dist/util';
+import '../../node_modules/bootstrap/js/dist/tooltip';
+import '../../node_modules/bootstrap/js/dist/collapse';
+
+import './navbar/navbar';
+
+
 $(document).ready(() =>{
   $(".scroll").click(function() {
     $("html, body").animate({
@@ -35,7 +43,8 @@ $(document).ready(() =>{
       return false;
     }
   });
-
+  // Подсказка
+	$('[data-toggle="tooltip"]').tooltip();
   // Modal
   $('[data-fancybox]').fancybox({
     autoFocus: false
@@ -44,96 +53,27 @@ $(document).ready(() =>{
   $('a[data-trigger="click"]').click(function(e){
     e.preventDefault();
   })
-  // Раскрытие блока
-  $('.toggle-item').on("click", function(e){
-    e.preventDefault();
-    let toggle = $(this);
-    if( !toggle.hasClass("toggle-item--active")){
-      toggle.addClass("toggle-item--active");
-      toggle.find(".toggle-item__title").addClass("toggle-item__title--active");
-      toggle.find(".toggle-item__content").slideDown();
-		}else{
-			toggle.removeClass("toggle-item--active");
-      toggle.find(".toggle-item__title").removeClass("toggle-item__title--active");
-      toggle.find(".toggle-item__content").slideUp();
-    }
-  });
-  // Слайдер
-	if( $('.slider').length > 0 ){
-    // Review Block Col
-    let $slickReview = $('#reviews');
-		$slickReview.slick({
-			slidesToShow: 1,
-			slidesToScroll: 1,
-			arrows      : true,
-			dots        : true,
-      autoplay  : false,
-      responsive: [
-        {
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            infinite: true,
-            arrows: true,
-            dots: true
-          }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            arrows: false,
-            dots: true
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            infinite: true,
-            arrows: false,
-            dots: true
-          }
-        }
-      ]
-    });
+  
+  if( $('#map').length > 0){
+    mapboxgl.accessToken = 'pk.eyJ1Ijoid2Vic29obyIsImEiOiJja2d0YnU3aWowY3F4MnluYXlibG5iZ2NpIn0.DQPwEXGmBRF4POGeXYf1Sw';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      center: [30.329028, 59.942980],
+      zoom: 12,
+      style: 'mapbox://styles/mapbox/light-v9'
+    }); 
+    var marker = new mapboxgl.Marker()
+    .setLngLat([30.329028, 59.942980])
+    .addTo(map);
+
+    var nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'top-left');
+
+    mapboxgl.setRTLTextPlugin('https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.1.0/mapbox-gl-rtl-text.js');
+    map.addControl(new MapboxLanguage({
+      defaultLanguage: 'ru'
+    }));
+
+    // map.setLayoutProperty('country-label', 'text-field', ['get', 'name_ru'])
   }
-	// Mobile Navbar
-  $(".navbar-toggle#nav").on("click", function(e){
-		e.preventDefault();
-    let navbar = $(".navbar-collapse");
-		if( !navbar.hasClass("navbar-collapse--active")){
-			navbar.addClass("navbar-collapse--active");
-			$(".navbar-overlay").addClass("navbar-overlay--active");
-		}else{
-			navbar.removeClass("navbar-collapse--active");
-			$(".navbar-overlay").removeClass("navbar-overlay--active");
-		}
-  });
-  $(".navbar-close").on("click", function(e){
-    e.preventDefault();
-    $(".navbar-collapse").removeClass("navbar-collapse--active");
-    $(".navbar-overlay").removeClass("navbar-overlay--active");
-  });
-  $(document).mouseup(function (e){ // событие клика по веб-документу
-    let dropdownActive = $(".navbar-collapse.navbar-collapse--active"); // элемент
-    if (!dropdownActive.is(e.target) // клик был не по блоку
-          // && dropdownActive.has(e.target).length === 0 // и не по его дочерним элементам
-          && !$(".navbar-toggle#nav").is(e.target) ) { 
-              $(".navbar-collapse").removeClass("navbar-collapse--active");
-              $(".navbar-overlay").removeClass("navbar-overlay--active");
-            }
-  });
-  // Hide Navigation on Desktop
-  $(window).resize(function(){
-    if ( $(window).width() > 991 || !window.matchMedia('screen and (max-width: 992px)').matches ){
-      $(".navbar-toggle").removeClass("navbar-toggle--active");
-        $(".navbar-collapse").removeClass("navbar-collapse--active");
-        $(".navbar-overlay").removeClass("navbar-overlay--active");
-    }
-  });
 });

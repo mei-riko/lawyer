@@ -1,0 +1,11 @@
+.list{
+    padding-left: 16px;
+    list-style: square;
+
+    &__item{
+        margin-bottom: map-get($spacers, 1);
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}

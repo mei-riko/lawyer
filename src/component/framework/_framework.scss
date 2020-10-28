@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6,
     font-family: $font-family-heading;
     font-weight: $font-weight-heading;
     line-height: $line-height-heading;
-    margin-bottom: map-get($spacers, 2);
+    margin-bottom: 1.5*map-get($spacers, 1);
 
     &:last-child{
         margin-bottom: 0;
@@ -24,26 +24,31 @@ h1, h2, h3, h4, h5, h6,
 }
 * + h1, * + h2, * + h3, * + h4, * + h5, * + h6,
 * + .h1, * + .h2, * + .h3, * + .h4, * + .h5, * + .h6{
-    margin-top: map-get($spacers, 1);
+    margin-top: map-get($spacers, 2);
 }
-.h1,h1{font-size: 64px;}
-.h2,h2{font-size: 46px;}
-.h3,h3{font-size: 36px;}
-.h4,h4{font-size: 24px;}
-.h5,h5{font-size: 18px;}
-.h6,h6{font-size: 1rem;}
+.h1,h1{font-size: 40px;}
+.h2,h2{font-size: 36px;}
+.h3,h3{font-size: 32px;}
+.h4,h4{font-size: 26px;}
+.h5,h5{font-size: 20px;}
+.h6,h6{font-size: 18px;}
 
 p {
     font-size: 1rem;
     margin-top: 0;
-    margin-bottom: map-get($spacers, 1);
+    margin-bottom: 1.5*map-get($spacers, 1);
+
     &:last-child{
         margin-bottom: 0;
     }
 }
 ol, ul{
     padding: 0;
-    margin-bottom: map-get($spacers, 1);
+    margin-bottom: 1.5*map-get($spacers, 1);
+
+    &:last-child{
+        margin-bottom: 0;
+    }
 }
 a{
     display: inline-block;
@@ -56,9 +61,24 @@ a{
         color: $link-hover-color;
         outline: none;
     }
+
+    &.link-inverse{
+        color: $link-hover-color;
+        &:hover, &:focus{
+            color: $link-color;
+        }
+    }
+}
+.table-responsive{
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 table{
-    td{
+    th, td{
         padding: 8px 15px;
     }
 }
@@ -71,6 +91,8 @@ table{
 
 .bg-black{background-color: $black;}
 .bg-white{background-color: $white;}
+.bg-grey{background-color: $grey;}
+.bg-light-grey{background-color: $light-grey;}
 
 .p-relative{position: relative;}
 .p-sticky{position: sticky; top: 0; left: 0; z-index: 101;}
@@ -87,10 +109,14 @@ table{
 .text-grey{color: $grey;}
 
 .text-uppercase{text-transform: uppercase;}
-.text-bold,strong,b{font-weight: 700;}
+.text-underline{text-decoration: underline;}
+
+
+.text-light{font-weight: $font-weight-light;}
+.text-bold,strong,b{font-weight: $font-weight-bold;}
 
 .text-small,small,.small{font-size: 0.9rem;}
-.text-lead,.lead{font-size: 1.2rem;}
+.text-lead,.lead{font-size: 1.15rem;}
 
 .text{
     &-right{text-align: right;}
@@ -100,7 +126,7 @@ table{
 .img-fluid{
     display: block;
     height: auto;
-    margin: 0 auto;
+    // margin: 0 auto;
     max-width: 100%;
 }
 

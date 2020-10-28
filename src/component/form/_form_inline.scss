@@ -1,0 +1,20 @@
+.form_inline{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    &__input{
+        flex: 0 0 calc(100% - 210px);
+        max-width: calc(100% - 210px);
+        margin-bottom: 0;
+    }
+    &__btn{
+        flex: 0 0 200px;
+        max-width: 200px;
+    }
+    &__agree{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

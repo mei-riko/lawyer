@@ -1,0 +1,29 @@
+.content-contact{
+    position: relative;
+    padding: map-get($map: $spacers, $key: 4);
+    background: $dark-grey;
+
+    &__body{
+        width: 680px;
+        padding: 0 $spacer/2;
+    }
+    &__map{
+        position: absolute!important;
+        bottom: map-get($map: $spacers, $key: 4);
+        right: 0;
+        z-index: 99;
+
+        filter: hue-rotate(-180deg);
+
+        width: 400px;
+        height: 500px;
+
+        background-color: darken($color: $dark-grey, $amount: 5);
+    }
+
+    &_inside{
+        padding-top: 0;
+        padding-bottom: 0;
+        background-color: inherit;
+    }
+}

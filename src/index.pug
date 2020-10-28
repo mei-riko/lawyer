@@ -4,6 +4,7 @@ html(lang="ru")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title Index Page
+        link(href="https://fonts.googleapis.com/css2?family=Alice&family=Raleway:wght@400;600;800&display=swap" rel="stylesheet")
         link(href='./css/style.css', rel='stylesheet')
 
     body
@@ -20,5 +21,10 @@ html(lang="ru")
                 a.navbar__item(href="service.html") Практики бюро
                 a.navbar__item(href="contact.html") Контакты
         include component/footer/footer.pug
-        script(src="./js/jquery.inputmask.js")
+
+        //- Fancybox
+        link(href='./css/jquery.fancybox.min.css', rel='stylesheet')
+        script(src="./js/jquery.fancybox.min.js")
+
+        script(src="./js/jquery.inputmask.min.js")
         script(src="./js/app.min.js")

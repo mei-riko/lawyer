@@ -2,11 +2,11 @@ $white                : #ffffff;
 $black                : #311011;
 $red                  : #953634;
 
-$light-grey           : #faf7f4;
-$grey                 : #e7ded1;
+$light-grey           : #fcfaf8;
+$grey                 : #efeae2;
 $dark-grey            : #cbc4b2;
 
-$border-color         : #faf7f4;
+$border-color         : $light-grey;
 $body-color           : $white;
 
 $link-color           : $black !default;
@@ -34,8 +34,10 @@ $container-max-widths: (
 ) !default;
 
 $font-size-base       : 1rem;
-$font-weight-base     : 200;
+$font-weight-base     : 400;
 $line-height-base     : 1.4;
+
+$font-weight-normal   : $font-weight-base;
 
 $font-family-heading  : "Alice", sans-serif;
 $font-family-base     : "Raleway", "Helvetica Neue", Arial,  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
@@ -49,7 +51,7 @@ $font-size: (
   xl: 16px
 ) !default;
 
-$font-weight-heading: 700;
+$font-weight-heading: $font-weight-base;
 
 $font-weight-light  : 300;
 $font-weight        : 400;
@@ -103,3 +105,22 @@ $positions: static, relative, absolute,     fixed, sticky !default;
 
 $print-page-size     : a3 !default;
 $print-body-min-width: map-get($grid-breakpoints, "lg") !default;
+
+// Tooltips
+$zindex-tooltip:                    1070 !default;
+$tooltip-font-size:                 11px !default;
+$tooltip-max-width:                 200px !default;
+$tooltip-color:                     $white !default;
+$tooltip-bg:                        $black !default;
+$tooltip-border-radius:             6px !default;
+$tooltip-opacity:                   .9 !default;
+$tooltip-padding-y:                 .25rem !default;
+$tooltip-padding-x:                 .5rem !default;
+$tooltip-margin:                    0 !default;
+
+$tooltip-arrow-width:               .8rem !default;
+$tooltip-arrow-height:              .4rem !default;
+$tooltip-arrow-color:               $tooltip-bg !default;
+
+// Options
+$enable-rounded:                              true !default;

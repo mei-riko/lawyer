@@ -1,8 +1,10 @@
 .btn_action{
-    background: $bg-secondary;
+    background: $red;
     color: $white;
+    border: 1px solid $red;
+
     &:hover, &:focus{
-        background: lighten($color: $bg-secondary, $amount: 4);
+        background: darken($color: $red, $amount: 4);
         color: $white;
     }
 }

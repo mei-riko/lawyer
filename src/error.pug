@@ -3,14 +3,60 @@ html(lang="ru")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title Basic Page
+        title Error Page
 
         link(href='./css/style.css', rel='stylesheet')
 
     body
         script(src="http://code.jquery.com/jquery-3.3.1.min.js")
-        include chunks/header.pug
+        include component/header/header.pug
+        section.container
+            .content.content_with-sidebar
+                .row.align-items-center
+                    .col-6.col-sm-12
+                        img.content__logo.img-fluid(src="../icon/logo.png")
+                        h1.content__title Ошибка 403: доступ запрещён
+                        p.content__intro Доступ к странице ограничен. Возможно, это закрытый раздел или страница содержит технические данные, скрытые от пользователей.
+                    .col-6.d-sm-none.text-center
+                        p.content__error 403
+            //- Navbar   
+            .navbar
+                a.navbar__item(href="person.html") Адвокаты-партнеры
+                a.navbar__item(href="service.html") Практики бюро
+                a.navbar__item(href="contact.html") Контакты
+            .content-form.mt-2
+                .content-form__body
+                    p.h4.content-form__title Есть вопросы? Обратитесь к нашим адвокатам за консультацией:
+                    form.form.form_inline(action="")
+                        input.input.form_inline__input.phone(type="text" placeholder="Контактный телефон")
+                        button.btn.btn_action.form_inline__btn(type="submit") Заказать звонок
+                        .form_inline__agree.form__agree.form__agree_inverse.checkbox
+                            input.checkbox__input#agreeInline(type="checkbox" name="agreeInline" checked="checked" required="required")
+                            label.checkbox__label(for="agreeInline") согласен с обработкой 
+                                a.text-underline(href="/policy.pdf" target="_blank") персональных данных
+            .content-contact
+                .content-contact__map#map
+                .content-contact__body
+                    .row
+                        .col-6.col-sm-12.mb-sm-2
+                            p.h6.text-uppercase.mb-2 Как с нами связаться?
+                            p.mb-1
+                                a(href="tel:88009113221") 8 (800) 911-32-21
+                            p.mb-1
+                                a(href="tel:88009113221") 8 (800) 911-32-21
+                            p.mb-1
+                                a(href="mailto:mail@mail.ru") office@marsovopole-law.ru
+                        .col-6.col-sm-12
+                            p.h6.text-uppercase.mb-2 Как нас найти?
+                            p 191186, Санкт-Петербург, Марсово Поле, д.&nbsp;3, оф.&nbsp;22Н, лит.&nbsp;А
+        include component/footer/footer.pug
+        //- Fancybox
+        link(href='./css/jquery.fancybox.min.css', rel='stylesheet')
+        script(src="./js/jquery.fancybox.min.js")
 
-        include chunks/footer.pug
-        script(src="./js/jquery.inputmask.js")
+        script(src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js')
+        link(href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet')
+        script(src="./js/mapbox.js")
+
+        script(src="./js/jquery.inputmask.min.js")
         script(src="./js/app.min.js")

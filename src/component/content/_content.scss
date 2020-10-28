@@ -1,0 +1,69 @@
+.content{
+    padding: $spacer map-get($map: $spacers, $key: 4);
+    background-color: $light-grey;
+
+    &__title{
+        font-size: 52px;
+    }
+    &__logo{
+        width: 200px;
+        margin-bottom: $spacer;
+    }
+    &__intro{
+        // margin-bottom: 0;
+        // padding-bottom: $spacer/2;
+
+        width: 880px;
+        max-width: 85%;
+    }
+    &__error{
+        font-family: $font-family-heading;
+        font-size: 120px;
+        line-height: 80px;
+        color: $dark-grey;
+    }
+    &__map{}
+
+    ol{
+        padding-left: 16px;
+    }
+    ul:not(.breadcrumbs){
+        @extend .list;
+    }
+    table{
+        thead{
+            background-color: $dark-grey;
+            border: 1px solid $dark-grey;
+
+            th{
+                text-transform: uppercase;
+                font-size: 12px;
+                font-weight: $font-weight-bolder;
+                letter-spacing: 1px;
+            }
+
+            & + tbody{
+                border-top: 2px solid $light-grey;
+            }
+        }
+        tbody{
+            background-color: $grey;
+            border: 1px solid $grey;
+            tr{
+                border-bottom: 2px solid $light-grey;
+                
+                &:nth-child(2n){
+                    background-color: lighten($color: $grey, $amount: 4);
+                }
+
+                &:last-child{
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    &_with-sidebar{
+        background: linear-gradient(90deg, $light-grey 50%, darken($light-grey,3) 50%);
+    }
+}
