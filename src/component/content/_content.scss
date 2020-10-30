@@ -1,4 +1,5 @@
 .content{
+    position: relative;
     padding: $spacer map-get($map: $spacers, $key: 4);
     background-color: $light-grey;
 
@@ -22,13 +23,25 @@
         line-height: 80px;
         color: $dark-grey;
     }
-    &__map{}
+    &__map{
+        width: 50%;
+        height: 100%;
+        filter: hue-rotate(-180deg);
+
+        position: absolute!important;
+        top: 0;
+        right: 0;
+        z-index: 11;
+    }
 
     ol{
         padding-left: 16px;
     }
     ul:not(.breadcrumbs){
         @extend .list;
+        li{
+            @extend .list__item;
+        }
     }
     table{
         thead{

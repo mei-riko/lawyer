@@ -3,14 +3,76 @@ html(lang="ru")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title Basic Page
-
+        title Partners
         link(href='./css/style.css', rel='stylesheet')
 
     body
         script(src="http://code.jquery.com/jquery-3.3.1.min.js")
-        include chunks/header.pug
+        include component/header/header.pug
+        section.container
+            //- Intro
+            .content
+                img.content__logo.img-fluid(src="../icon/logo.png")
+                h1 Адвокаты-партнёры бюро
+                p.content__intro Maxime placeat, facere possimus, omnis voluptas nulla vero eos. Quam nihil molestiae non recusandae corrupti, quos dolores eos, qui. Id est eligendi optio, cumque nihil impedit, quo minus id, quod maxime. Eligendi optio, cumque nihil molestiae consequatur, vel illum. Temporibus autem quibusdam et expedita distinctio. Saepe eveniet, ut perspiciatis, unde omnis dolor. Provident, similique sunt in ea commodi autem quibusdam et voluptates repudiandae sint.
+            //- Navbar   
+            .navbar
+                a.navbar__item.navbar__item--active(href="person.html") Адвокаты-партнеры
+                a.navbar__item(href="service.html") Практики бюро
+                a.navbar__item(href="contact.html") Контакты
+            //- Main Content
+            .content
+                .row
+                    .col-3.col-sm-12.mb-3
+                        a.item.item_person(data-fancybox="person" data-src="#person-content")
+                            img.img-fluid(src="../img/01.jpg" alt="" title="")
+                            p.item_person__title.h6 Александров Роман Алексеевич
+                    .col-3.col-sm-12.mb-3
+                        .item.item_person(data-fancybox="person" data-src="info-2")
+                            img.img-fluid(src="../img/02.jpg" alt="" title="")
+                            p.item_person__title.h6 Александрова Мария Александровна 
+                    .col-3.col-sm-12.mb-3
+                        .item.item_person(data-fancybox="person" data-src="info-3")
+                            img.img-fluid(src="../img/03.jpg" alt="" title="")
+                            p.item_person__title.h6 Гусаров Дмитрий Анатольевич
+                    .col-3.col-sm-12.mb-3
+                        .item.item_person(data-fancybox="person" data-src="info-4")
+                            img.img-fluid(src="../img/04.jpg" alt="" title="")
+                            p.item_person__title.h6 Емуранова Наталья Валентиновна
+                    .col-3.col-sm-12.mb-3
+                        .item.item_person(data-fancybox="person" data-src="info-5")
+                            img.img-fluid(src="../img/05.jpg" alt="" title="")
+                            p.item_person__title.h6 Соколов Яков Александрович
+                    .col-3.col-sm-12.mb-3
+                        .item.item_person(data-fancybox="person" data-src="info-6")
+                            img.img-fluid(src="../img/06.jpg" alt="" title="")
+                            p.item_person__title.h6 Топильская Елена Валентиновна
+                    .col-3.col-sm-12.mb-3
+                        .item.item_person(data-fancybox="person" data-src="info-7")
+                            img.img-fluid(src="../img/07.jpg" alt="" title="")
+                            p.item_person__title.h6 Хейфец Марина Семеновна
+                    .col-3.col-sm-12.mb-3
+                        .item.item_person(data-fancybox="person" data-src="info-8")
+                            img.img-fluid(src="../img/08.jpg" alt="" title="")
+                            p.item_person__title.h6 Шпагин Евгений Александрович
+        include component/footer/footer.pug
+        .modal#person-content
+            .row
+                .col-5
+                    img.img-fluid(src="../img/04.jpg" alt="" title="")
+                .col-7
+                    p.h4 Александров Роман Алексеевич
+                    p Адвокат, выпускник юридического факультета Санкт-Петербургского государственного университета, доктор юридических наук, доцент кафедры уголовного процесса и криминалистики юридического факультета Санкт-Петербургского государственного университета.
+                    p Роман Алексеевич является признанным специалистом в области уголовного права и уголовного процесса. Имеет многолетний опыт работы в Следственной службе УФСБ РФ по Санкт-Петербургу и
+                    p Ленинградской области в должности следователя, старшего следователя, старшего следователя по особо важным делам. Член правления ассоциации юристов России.
+                    p.h6.text-uppercase.text-red Специализация: 
+                    ul.list
+                        li.list__item защита по уголовным делам.
 
-        include chunks/footer.pug
-        script(src="./js/jquery.inputmask.js")
+
+        //- Fancybox
+        link(href='./css/jquery.fancybox.min.css', rel='stylesheet')
+        script(src="./js/jquery.fancybox.min.js")
+
+        script(src="./js/jquery.inputmask.min.js")
         script(src="./js/app.min.js")

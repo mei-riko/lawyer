@@ -1,0 +1,41 @@
+.item_service{
+    padding: $spacer;
+    overflow: hidden;
+    height: 100%;
+    
+    &:before{
+        content: '';
+        display: block;
+
+        position: absolute;
+        top: $spacer/2;
+        left: $spacer/2;
+
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+
+        border: 1px solid $grey;
+    }
+
+    &__title{
+        position: relative;
+        white-space: nowrap;
+        font-family: $font-family-heading;
+        margin-bottom: $spacer/2;
+        @extend .text-uppercase;
+        z-index: 11;
+    }
+    &__link{
+        position: relative;
+        z-index: 11;
+        display: block;
+
+        font-size: map-get($map: $font-size, $key: "md");
+        line-height: 1.2;
+        margin-bottom: $spacer/3;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}

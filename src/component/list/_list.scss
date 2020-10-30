@@ -1,11 +1,25 @@
 .list{
     padding-left: 16px;
-    list-style: square;
+    list-style: none;
 
     &__item{
+        position: relative;
         margin-bottom: map-get($spacers, 1);
         &:last-child{
             margin-bottom: 0;
+        }
+
+        &:before{
+            content: '';
+            display: block;
+
+            position: absolute;
+            left: -16px;
+            top: .675rem;
+
+            width: .35rem;
+            height: .35rem;
+            background-color: $red;
         }
     }
 }

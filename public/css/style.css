@@ -2047,11 +2047,11 @@ table th, table td {
   color: #311011;
 }
 
-.text-grey {
-  color: #efeae2;
+.text-red {
+  color: #953634;
 }
 
-.text-uppercase {
+.text-uppercase, .item_service__title {
   text-transform: uppercase;
 }
 
@@ -3156,6 +3156,11 @@ table th, table td {
   text-decoration: none;
 }
 
+.navbar__item--active {
+  background-color: #cbc4b2;
+  color: #311011;
+}
+
 .breadcrumbs {
   font-size: 12px;
   line-height: 1.2;
@@ -3199,23 +3204,102 @@ table th, table td {
 
 .modal {
   display: none;
+  width: 920px;
   max-width: 100%;
+  max-height: 80vh;
 }
 
 .list, .content ul:not(.breadcrumbs) {
   padding-left: 16px;
-  list-style: square;
+  list-style: none;
 }
 
-.list__item {
+.list__item, .content ul:not(.breadcrumbs) li {
+  position: relative;
   margin-bottom: 10px;
 }
 
-.list__item:last-child {
+.list__item:last-child, .content ul:not(.breadcrumbs) li:last-child {
+  margin-bottom: 0;
+}
+
+.list__item:before, .content ul:not(.breadcrumbs) li:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -16px;
+  top: .675rem;
+  width: .35rem;
+  height: .35rem;
+  background-color: #953634;
+}
+
+.item {
+  position: relative;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.item_person {
+  cursor: pointer;
+}
+
+.item_person:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  border: 1px solid #efeae2;
+}
+
+.item_person__title {
+  position: relative;
+  z-index: 11;
+}
+
+.item_service {
+  padding: 40px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.item_service:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  border: 1px solid #efeae2;
+}
+
+.item_service__title {
+  position: relative;
+  white-space: nowrap;
+  font-family: "Alice", sans-serif;
+  margin-bottom: 20px;
+  z-index: 11;
+}
+
+.item_service__link {
+  position: relative;
+  z-index: 11;
+  display: block;
+  font-size: 14px;
+  line-height: 1.2;
+  margin-bottom: 13.33333px;
+}
+
+.item_service__link:last-child {
   margin-bottom: 0;
 }
 
 .content {
+  position: relative;
   padding: 40px 60px;
   background-color: #fcfaf8;
 }
@@ -3239,6 +3323,17 @@ table th, table td {
   font-size: 120px;
   line-height: 80px;
   color: #cbc4b2;
+}
+
+.content__map {
+  width: 50%;
+  height: 100%;
+  -webkit-filter: hue-rotate(-180deg);
+  filter: hue-rotate(-180deg);
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  z-index: 11;
 }
 
 .content ol {
