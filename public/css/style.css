@@ -2866,6 +2866,10 @@ table th, table td {
   margin-bottom: 0;
 }
 
+.form_inline__input .input {
+  margin-bottom: 0;
+}
+
 .form_inline__btn {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 200px;
@@ -2917,18 +2921,18 @@ table th, table td {
   border: 1px solid #fcfaf8;
   border-radius: 0;
   font-size: 14px;
-  color: #cbc4b2;
+  color: #311011;
 }
 
 .jGrowl#jGrowl .jGrowl-notification .jGrowl-close {
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 30px;
+  font-size: 16px;
   line-height: 30px;
   width: 34px;
   text-align: center;
-  border-radius: 0 0 0 15px;
+  border-radius: 0;
   color: #fff;
   outline: 0;
 }
@@ -2942,7 +2946,7 @@ table th, table td {
 }
 
 .jGrowl#jGrowl .jGrowl-notification.af-message-error .jGrowl-close {
-  background: #df0a0a;
+  background: #953634;
 }
 
 .header {
@@ -3209,6 +3213,14 @@ table th, table td {
   max-height: 80vh;
 }
 
+.modal__map {
+  width: 100%;
+  height: 400px;
+  overflow: visible;
+  -webkit-filter: hue-rotate(-180deg);
+  filter: hue-rotate(-180deg);
+}
+
 .list, .content ul:not(.breadcrumbs) {
   padding-left: 16px;
   list-style: none;
@@ -3409,6 +3421,7 @@ table th, table td {
 
 .content-main__logo {
   width: 260px;
+  margin: 0 auto;
 }
 
 .content-main__title {

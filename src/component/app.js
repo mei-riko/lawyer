@@ -54,26 +54,49 @@ $(document).ready(() =>{
     e.preventDefault();
   })
   
+  mapboxgl.accessToken = 'pk.eyJ1Ijoid2Vic29obyIsImEiOiJja2d0YnU3aWowY3F4MnluYXlibG5iZ2NpIn0.DQPwEXGmBRF4POGeXYf1Sw';
+  mapboxgl.setRTLTextPlugin('https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.1.0/mapbox-gl-rtl-text.js');
+
   if( $('#map').length > 0){
-    mapboxgl.accessToken = 'pk.eyJ1Ijoid2Vic29obyIsImEiOiJja2d0YnU3aWowY3F4MnluYXlibG5iZ2NpIn0.DQPwEXGmBRF4POGeXYf1Sw';
-    var map = new mapboxgl.Map({
+    let map = new mapboxgl.Map({
       container: 'map',
       center: [30.329028, 59.942980],
       zoom: 12,
       style: 'mapbox://styles/mapbox/light-v9'
     }); 
-    var marker = new mapboxgl.Marker()
-    .setLngLat([30.329028, 59.942980])
-    .addTo(map);
+    let marker = new mapboxgl.Marker()
+                      .setLngLat([30.329028, 59.942980])
+                      .addTo(map);
 
-    var nav = new mapboxgl.NavigationControl();
+    let nav = new mapboxgl.NavigationControl();
     map.addControl(nav, 'top-left');
-
-    mapboxgl.setRTLTextPlugin('https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.1.0/mapbox-gl-rtl-text.js');
     map.addControl(new MapboxLanguage({
       defaultLanguage: 'ru'
     }));
-
-    // map.setLayoutProperty('country-label', 'text-field', ['get', 'name_ru'])
   }
+
+  if( $('#map-modal').length > 0){
+    var mapModal = new mapboxgl.Map({
+      container: 'map-modal',
+      center: [30.329028, 59.942980],
+      zoom: 12,
+      style: 'mapbox://styles/mapbox/light-v9'
+    }); 
+    let marker = new mapboxgl.Marker()
+                      .setLngLat([30.329028, 59.942980])
+                      .addTo(mapModal);
+
+    let nav = new mapboxgl.NavigationControl();
+    mapModal.addControl(nav, 'top-left');
+    mapModal.addControl(new MapboxLanguage({
+      defaultLanguage: 'ru'
+    }));
+  }
+  $('[data-fancybox="maps"]').fancybox({
+    autoFocus: false,
+    touch: false,
+    afterShow : function( instance, current ) {
+      mapModal.resize();
+    }
+  });
 });

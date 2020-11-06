@@ -35,7 +35,7 @@ html(lang="ru")
                             label.checkbox__label(for="agreeInline") согласен с обработкой 
                                 a.text-underline(href="/policy.pdf" target="_blank") персональных данных
             .content-contact
-                .content-contact__map#map
+                .content-contact__map.map#map
                 .content-contact__body
                     .row
                         .col-6.col-sm-12.mb-sm-2
@@ -50,6 +50,8 @@ html(lang="ru")
                             p.h6.text-uppercase.mb-2 Как нас найти?
                             p 191186, Санкт-Петербург, Марсово Поле, д.&nbsp;3, оф.&nbsp;22Н, лит.&nbsp;А
         include component/footer/footer.pug
+        .modal.modal_map#maps
+            .modal__map.map#map-modal
         //- Fancybox
         link(href='./css/jquery.fancybox.min.css', rel='stylesheet')
         script(src="./js/jquery.fancybox.min.js")

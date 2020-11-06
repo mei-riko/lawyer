@@ -18,17 +18,17 @@
         border-radius: 0;
 
         font-size: 14px;
-        color: $dark-grey;
+        color: $black;
 
         .jGrowl-close {
             position: absolute;
             top: 10px;
             right: 10px;
-            font-size: 30px;
+            font-size: 16px;
             line-height: 30px;
             width: 34px;
             text-align: center;
-            border-radius: 0 0 0 15px;
+            border-radius: 0;
             color: #fff;
             outline: 0
         }
@@ -43,7 +43,7 @@
         &.af-message-error {
             background-color: #fef8f8!important;
             .jGrowl-close {
-                background: #df0a0a;
+                background: $red;
             }
         }
     }

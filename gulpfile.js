@@ -77,8 +77,8 @@ var gulp = require("gulp"),
   
   gulp.task('watch', function () {
     gulp.watch(['./src/*.pug'], gulp.parallel('html'));
-    gulp.watch(['./src/compinent/*.pug'], gulp.parallel('html'));
-    gulp.watch(['./src/compinent/*/*.pug'], gulp.parallel('html'));
+    gulp.watch(['./src/component/*.pug'], gulp.parallel('html'));
+    gulp.watch(['./src/component/*/*.pug'], gulp.parallel('html'));
     gulp.watch(['./src/component/*.scss'], gulp.parallel('css'));
     gulp.watch(['./src/component/*/*.scss'], gulp.parallel('css'));
     gulp.watch(['./src/component/*.js'], gulp.parallel('scripts'));

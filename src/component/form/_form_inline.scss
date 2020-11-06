@@ -8,6 +8,10 @@
         flex: 0 0 calc(100% - 210px);
         max-width: calc(100% - 210px);
         margin-bottom: 0;
+
+        .input{
+            margin-bottom: 0;
+        }
     }
     &__btn{
         flex: 0 0 200px;
