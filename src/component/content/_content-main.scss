@@ -28,6 +28,7 @@
         z-index: 9;
         flex: 0 0 100%;
         max-width: 100%;
+        margin: 0;
     }
     &__logo{
         width: 260px;
@@ -40,5 +41,36 @@
         @extend .mt-3;
         color: $red;
         text-transform: uppercase;
+    }
+}
+
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .content-main{
+        &__title{
+            font-size: 46px;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .content-main{
+        min-height: calc(100vh - 280px);
+        &__logo {
+            width: 200px;
+        }
+        &__title{
+            font-size: 32px;
+            @extend .mt-sm-2;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .content-main{
+        min-height: calc(100vh - 280px);
+        &__logo {
+            width: 160px;
+        }
+        &__title{
+            font-size: 24px;
+        }
     }
 }

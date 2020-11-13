@@ -3,3 +3,20 @@
         bottom: 134px;
     }
 }
+
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .header_index{
+        &__group{
+            bottom: 300px;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .header_index{
+        &__group{
+            bottom: auto;
+            top: 10px;
+            flex-direction: row;
+        }
+    }
+}

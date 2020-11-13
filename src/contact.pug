@@ -12,13 +12,13 @@ html(lang="ru")
         include component/header/header.pug
         section.container
             .content.content_with-sidebar
-                .content__map#map
                 .row.align-items-center
-                    .col-6.col-sm-12
+                    .col-6.col-lg-7.col-md-12
                         img.content__logo.img-fluid(src="../icon/logo.png")
                         h1 Контактная информация
                         p.content__intro Maxime placeat, facere possimus, omnis voluptas nulla vero eos. 
                             | Quam nihil molestiae non recusandae corrupti, quos dolores eos, qui. Id est eligendi optio.
+                .content__map#map
             //- Navbar   
             .navbar
                 a.navbar__item(href="person.html") Адвокаты-партнеры
@@ -26,18 +26,21 @@ html(lang="ru")
                 a.navbar__item.navbar__item--active(href="contact.html") Контакты
             .bg-light-grey.mt-2
                 .row.align-items-center
-                    .col-5
+                    .col-5.col-lg-12
                         .content-contact.content-contact_inside
-                            p.h6.text-uppercase.mb-1 Как с нами связаться?
-                            p.mb-0
-                                a(href="tel:88009113221") 8 (800) 911-32-21
-                            p.mb-0
-                                a(href="tel:88009113221") 8 (800) 911-32-21
-                            p.mb-0
-                                a(href="mailto:mail@mail.ru") office@marsovopole-law.ru
-                            p.h6.text-uppercase.mt-2.mb-1 Как нас найти?
-                            p 191186, Санкт-Петербург, Марсово Поле, д.&nbsp;3, оф.&nbsp;22Н, лит.&nbsp;А
-                    .col-7
+                            .row
+                                .col-12.col-lg-6.col-sm-12
+                                    p.h6.text-uppercase.mb-1 Как с нами связаться?
+                                    p.mb-0
+                                        a(href="tel:88009113221") 8 (800) 911-32-21
+                                    p.mb-0
+                                        a(href="tel:88009113221") 8 (800) 911-32-21
+                                    p.mb-0
+                                        a(href="mailto:mail@mail.ru") office@marsovopole-law.ru
+                                .col-12.col-lg-6.col-sm-12.mt-2.mt-md-0.mt-sm-2
+                                    p.h6.text-uppercase.mb-1 Как нас найти?
+                                    p 191186, Санкт-Петербург, Марсово Поле, д.&nbsp;3, оф.&nbsp;22Н, лит.&nbsp;А
+                    .col-7.col-lg-12
                         .content-form.content-form_inside
                             .content-form__body
                                 p.h4.content-form__title Есть вопросы? Обратитесь к нашим адвокатам за консультацией:
@@ -49,6 +52,8 @@ html(lang="ru")
                                         label.checkbox__label(for="agreeInline") согласен с обработкой 
                                             a.text-underline(href="/policy.pdf" target="_blank") персональных данных
         include component/footer/footer.pug
+        .modal.modal_map#maps
+            .modal__map.map#map-modal
         //- Fancybox
         link(href='./css/jquery.fancybox.min.css', rel='stylesheet')
         script(src="./js/jquery.fancybox.min.js")

@@ -15,7 +15,7 @@
 
         filter: hue-rotate(-180deg);
 
-        width: 400px;
+        width: calc(100% - 800px);
         height: 500px;
 
         background-color: darken($color: $dark-grey, $amount: 5);
@@ -25,5 +25,67 @@
         padding-top: 0;
         padding-bottom: 0;
         background-color: inherit;
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .content-contact{
+        // padding: $spacer $spacer/2;
+        &__body{
+            width: 560px;
+        }
+        &__map{
+            width: 400px;
+            max-width: calc(100% - 600px);
+            height: 480px;
+            bottom: $spacer;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .content-contact{
+        padding: 0;
+        &__map{
+            position: relative!important;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            max-width: 100%;
+            height: 260px;
+        }
+        &__body{
+            width: 100%;
+            padding: map-get($map: $spacers, $key: 4);
+        }
+        &_inside{
+            padding: $spacer;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .content-contact{
+        &__body{
+            padding: $spacer;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .content-contact{
+        &__map{
+            height: 320px;
+        }
+        &_inside{
+            padding: $spacer;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .content-contact{
+        &__body{
+            padding: $spacer $spacer/2;
+        }
+
+        &_inside{
+            padding: 30px;
+        }
     }
 }

@@ -25,7 +25,7 @@
         &_nav{
             position: fixed;
             top: $spacer/2;
-            left: 170px;
+            left: 110px;
             z-index: 101;
 
             padding: 14px;
@@ -46,7 +46,7 @@
     }
     &__group{
         position: fixed;
-        right: 170px;
+        right: 110px;
         bottom: $spacer/2;
         z-index: 101;
 
@@ -54,12 +54,38 @@
         flex-wrap: wrap;
         flex-direction: column;
     }
+    &__lang{
+        padding: 6px 8px 5px;
+        font-size: 12px;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+
+        margin-right: 12px;
+
+        background-color: $grey;
+        transition: .4s;
+        cursor: pointer;
+
+        &:hover,&:focus{
+            background-color: darken($color: $grey, $amount: 6);
+        }
+
+        &--active{
+            background-color: $red;
+            color: $light-grey;
+            cursor: default;
+
+            &:hover,&:focus{
+                background-color: $red;
+            }
+        }
+    }
 
     // Nav
     &__nav{
         position: fixed;
         top: 0;
-        left: 180px;
+        left: 140px;
         bottom: 0;
         transition: .5s;
         overflow: hidden;
@@ -68,7 +94,7 @@
         z-index: 99;
 
         max-width: 100%;
-        width: calc(100% - 400px);
+        width: calc(100% - 280px);
         padding: map-get($map: $spacers, $key: 3);
 
         height: 100%;
@@ -87,6 +113,7 @@
     &__nav-row{
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
 
         flex: 0 0 720px;
         max-width: 100%;
@@ -121,7 +148,7 @@
 
         background-color: $body-color;
 
-        width: 200px;
+        width: 140px;
         height: 100vh;
 
         position: fixed;
@@ -151,4 +178,117 @@
             width: 140px;
         }
     }
-  }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .header{
+        &__nav{
+            width: calc(100% - 220px);
+            left: 110px;
+        }
+        &__group{
+            right: 80px;
+        }
+        &__btn{
+            &_nav {
+                left: 80px;
+            }
+        }
+        // Psevdo
+        &:before{
+            width: 110px;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .header{
+        &__nav{
+            width: 700px;
+            left: calc( (100% - 700px)/2);
+        }
+        &__group{
+            right: calc( (100% - 760px)/2 );
+        }
+        &__btn{
+            &_nav {
+                left: calc( (100% - 760px)/2 );
+            }
+        }
+        // Psevdo
+        &:before{
+            width: calc( (100% - 700px)/2 );
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .header{
+        &__nav{
+            width: 500px;
+            left: calc( (100% - 500px)/2);
+        }
+        &__group{
+            right: calc( (100% - 540px)/2 );
+        }
+        &__btn{
+            width: 40px;
+            height: 40px;
+            margin-bottom: $spacer/4;
+
+            &_nav {
+                padding: 8px;
+                left: calc( (100% - 540px)/2 );
+            }
+            &_phone{
+                padding: 8px;
+            }
+            &_mail{
+                padding: 10px;
+            }
+            &_location{
+                padding: 6px;
+            }
+        }
+        &__navbar{
+            font-size: 18px;
+        }
+        &__nav-col{
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: 0 $spacer/2;
+
+            margin-bottom: $spacer;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        // Psevdo
+        &:before{
+            width: calc( (100% - 500px)/2 );
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .header{
+        &__nav{
+            width: 100%;
+            left: 0;
+            padding: 40px 20px;
+        }
+        &__group{
+            right: $spacer/4;
+        }
+        &__btn{
+            margin-bottom: 0;
+            margin-left: $spacer/4;
+            &_nav {
+                margin-left: 0;
+                top: $spacer/4;
+                left: $spacer/4;
+            }
+        }
+        // Psevdo
+        &:before{
+            width: 0;
+        }
+    }
+}

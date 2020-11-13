@@ -200,3 +200,24 @@ table{
         &-right{text-align: right;}
     }
 }
+
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+
+    .h1,h1{font-size: 24px;}
+    .h2,h2{font-size: 22px;}
+    .h3,h3{font-size: 20px;}
+    .h4,h4{font-size: 18px;}
+    .h5,h5{font-size: 16px;}
+    
+    .d-sm{
+        &-flex{display: flex;}
+        &-none{display: none;}
+        &-block{display: block;}
+    }
+
+    .text-sm{
+        &-left{text-align: left;}
+        &-center{text-align: center;}
+        &-right{text-align: right;}
+    }
+}

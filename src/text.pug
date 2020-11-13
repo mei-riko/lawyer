@@ -69,9 +69,15 @@ html(lang="ru")
                                     td Значение 4
                                     td Значение 5
         include component/footer/footer.pug
+        .modal.modal_map#maps
+            .modal__map.map#map-modal
         //- Fancybox
         link(href='./css/jquery.fancybox.min.css', rel='stylesheet')
         script(src="./js/jquery.fancybox.min.js")
+
+        script(src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js')
+        link(href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet')
+        script(src="./js/mapbox.js")
 
         script(src="./js/jquery.inputmask.min.js")
         script(src="./js/app.min.js")

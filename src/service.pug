@@ -23,7 +23,7 @@ html(lang="ru")
             //- Main Content
             .content
                 .row
-                    .col-4.col-sm-12
+                    .col-4.col-lg-6.col-sm-12.mb-sm-2
                         .item.item_service
                             p.item_service__title I. Разрешение споров
                             a.item_service__link(href="#") Банкротство
@@ -32,16 +32,22 @@ html(lang="ru")
                             a.item_service__link(href="#") Судебно-арбитражная практика
                             a.item_service__link(href="#") Трудовое право
                             a.item_service__link(href="#") Уголовно-правовая практика
-                    .col-4.col-sm-12
+                    .col-4.col-lg-6.col-sm-12
                         .item.item_service
                             p.item_service__title II. Сделки&финансирование
                             a.item_service__link(href="#") Банкротство
                             a.item_service__link(href="#") Защита деловой репутации
                             a.item_service__link(href="#") Международные арбитражные и&nbsp;судебные споры 
         include component/footer/footer.pug
+        .modal.modal_map#maps
+            .modal__map.map#map-modal
         //- Fancybox
         link(href='./css/jquery.fancybox.min.css', rel='stylesheet')
         script(src="./js/jquery.fancybox.min.js")
+
+        script(src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js')
+        link(href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet')
+        script(src="./js/mapbox.js")
 
         script(src="./js/jquery.inputmask.min.js")
         script(src="./js/app.min.js")

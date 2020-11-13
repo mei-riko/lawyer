@@ -13,7 +13,7 @@ html(lang="ru")
         section.container
             .content-main(style="background-image:url('./css/bg-main.png'); ")
                 .content-main__row.row.align-items-center.justify-content-center
-                    .col-8.col-sm-12
+                    .col-8.col-lg-10.col-sm-12
                         img.content-main__logo.img-fluid(src="../icon/logo.png")
                         h1.content-main__title Адвокатское бюро «Марсово поле»
             .navbar
@@ -21,10 +21,15 @@ html(lang="ru")
                 a.navbar__item(href="service.html") Практики бюро
                 a.navbar__item(href="contact.html") Контакты
         include component/footer/footer.pug
-
+        .modal.modal_map#maps
+            .modal__map.map#map-modal
         //- Fancybox
         link(href='./css/jquery.fancybox.min.css', rel='stylesheet')
         script(src="./js/jquery.fancybox.min.js")
+
+        script(src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js')
+        link(href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet')
+        script(src="./js/mapbox.js")
 
         script(src="./js/jquery.inputmask.min.js")
         script(src="./js/app.min.js")

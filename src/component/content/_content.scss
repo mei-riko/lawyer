@@ -2,6 +2,7 @@
     position: relative;
     padding: $spacer map-get($map: $spacers, $key: 4);
     background-color: $light-grey;
+    overflow: hidden;
 
     &__title{
         font-size: 52px;
@@ -44,6 +45,7 @@
         }
     }
     table{
+        // width: 100%;
         thead{
             background-color: $dark-grey;
             border: 1px solid $dark-grey;
@@ -78,5 +80,70 @@
 
     &_with-sidebar{
         background: linear-gradient(90deg, $light-grey 50%, darken($light-grey,3) 50%);
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .content{
+        &_with-sidebar{
+            background: linear-gradient(90deg, #fcfaf8 60%, #f7f2ed 60%);
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .content{
+        padding: $spacer;
+        &__title{
+            font-size: 42px;
+        }
+        &__error{
+            font-size: 90px;
+        }
+        &__map{
+            width: 42%;
+        }
+        &_with-sidebar{
+            background: linear-gradient(90deg, #fcfaf8 65%, #f7f2ed 65%);
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'md')){
+    .content{
+        &__map{
+            position: inherit!important;
+            width: 100%;
+            height: 280px;
+            margin-top: $spacer;
+        }
+
+        &_with-sidebar{
+            background: $light-grey;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .content{
+        padding: $spacer map-get($map: $spacers, $key: 3);
+        &__logo{
+            width: 160px;
+        }
+        &__title{
+            font-size: 32px;
+        }
+        
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .content{
+        padding: $spacer map-get($map: $spacers, $key: 2);
+        &__logo{
+            width: 120px;
+            margin-bottom: $spacer/2;
+        }
+        &__title{
+            font-size: 24px;
+        }
+        &__map{
+            height: 240px;
+        }
     }
 }

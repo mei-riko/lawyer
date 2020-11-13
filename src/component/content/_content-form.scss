@@ -36,3 +36,40 @@
         width: 100%;
     }
 }
+@media all and (max-width: map-get($grid-breakpoints, 'xl')){
+    .content-form{
+        width: calc(100% - 360px);
+        &_inside{
+            width: 100%;
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'lg')){
+    .content-form{
+        width: 100%;
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .content-form{
+        padding: $spacer/2;
+        &::before{
+            top: 20px;
+            left: 20px;
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+        }
+    }
+}
+@media all and (max-width: map-get($grid-breakpoints, 'xs')){
+    .content-form{
+        &__body{
+            padding: $spacer/4;
+        }
+        &::before{
+            top: 10px;
+            left: 10px;
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
+        }
+    }
+}

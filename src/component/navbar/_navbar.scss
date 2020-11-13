@@ -48,3 +48,12 @@
         }
     }
 }
+
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .navbar{
+        &__item{
+            @extend .col-sm-12;
+            margin-top: 1px;
+        }
+    }
+}

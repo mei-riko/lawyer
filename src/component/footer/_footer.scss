@@ -10,3 +10,8 @@
         line-height: 14px;
     }
 }
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .footer{
+        height: 95px;
+    }
+}

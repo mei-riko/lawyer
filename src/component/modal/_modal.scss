@@ -2,7 +2,7 @@
     display: none;
 
     width: 920px;
-    max-width: 100%;
+    max-width: calc(100% - 80px);
     max-height: 80vh;
     
     &__map{
@@ -11,5 +11,17 @@
         overflow: visible;
 
         filter: hue-rotate(-180deg);
+    }
+
+    &.fancybox-content{
+        max-width: calc(100% - 80px);
+    }
+}
+
+@media all and (max-width: map-get($grid-breakpoints, 'sm')){
+    .modal{
+        &.fancybox-content{
+            padding: $spacer/2;
+        }
     }
 }

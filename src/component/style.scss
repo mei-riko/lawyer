@@ -6,7 +6,6 @@
 @import "framework/grid";
 @import "framework/position";
 @import "framework/framework";
-@import "framework/offset";
 
 @import "node_modules/bootstrap/scss/vendor/rfs";
 @import "node_modules/bootstrap/scss/mixins/border-radius";
@@ -43,3 +42,5 @@
 @import "content/content-main";
 @import "content/content-form";
 @import "content/content-contact";
+
+@import "framework/offset";
