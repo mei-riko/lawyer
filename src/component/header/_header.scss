@@ -54,6 +54,12 @@
         flex-wrap: wrap;
         flex-direction: column;
     }
+    &__lang-group{
+        position: fixed;
+        right: 110px;
+        top: $spacer/2;
+        z-index: 101;
+    }
     &__lang{
         padding: 6px 8px 5px;
         font-size: 12px;
@@ -185,6 +191,9 @@
             width: calc(100% - 220px);
             left: 110px;
         }
+        &__lang-group{
+            right: 80px;
+        }
         &__group{
             right: 80px;
         }
@@ -204,6 +213,9 @@
         &__nav{
             width: 700px;
             left: calc( (100% - 700px)/2);
+        }
+        &__lang-group{
+            right: calc( (100% - 760px)/2);
         }
         &__group{
             right: calc( (100% - 760px)/2 );
@@ -261,6 +273,9 @@
                 margin-bottom: 0;
             }
         }
+        &__lang-group{
+            right: calc( (100% - 560px)/2);
+        }
         // Psevdo
         &:before{
             width: calc( (100% - 500px)/2 );
@@ -276,6 +291,10 @@
         }
         &__group{
             right: $spacer/4;
+        }
+        &__lang-group{
+            right: 0px;
+            top: 70px;
         }
         &__btn{
             margin-bottom: 0;

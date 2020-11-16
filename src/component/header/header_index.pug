@@ -1,6 +1,9 @@
 .header.header_index
     svg.header__btn.header__btn_nav#open-nav(viewBox="0 0 24.00 24.00" xml:space="preserve")
         path(fill="#311011" fill-opacity="1" stroke-width="0.2" stroke-linejoin="round" d="M 3,8L 3,7L 20,7L 20,8L 3,8 Z M 20,12L 20,13L 3,13L 3,12L 20,12 Z M 3,17L 20,17L 20,18L 3,18L 3,17 Z ")
+    .d-flex.header__lang-group
+        .header__lang(data-href="en") EN
+        .header__lang.header__lang--active(data-href="ru") РУС
     .header__group.header_index__group
         a.header__btn.header__btn_phone(href="tel:88002304415" title="Позвонить в бюро" data-toggle="tooltip" data-placement="left" data-original-title="Позвонить в бюро")
             <svg class="header__icon" viewBox="0 0 512 512" width="24" height="24" xml:space="preserve"><path d="M176,477H336a46.052,46.052,0,0,0,46-46V81a46.052,46.052,0,0,0-46-46H176a46.052,46.052,0,0,0-46,46V431A46.052,46.052,0,0,0,176,477Zm0-430H336a34.038,34.038,0,0,1,34,34V95H356a6,6,0,0,0,0,12h14V393H142V107H305a6,6,0,0,0,0-12H142V81A34.038,34.038,0,0,1,176,47ZM142,405H370v26a34.038,34.038,0,0,1-34,34H176a34.038,34.038,0,0,1-34-34Z"/><path d="M324.7,107H335.81a6,6,0,0,0,0-12H324.7a6,6,0,0,0,0,12Z"/><path d="M256,456a21,21,0,1,0-21-21A21.024,21.024,0,0,0,256,456Zm0-30a9,9,0,1,1-9,9A9.01,9.01,0,0,1,256,426Z"/></svg>
@@ -20,9 +23,6 @@
                         a.header__navbar-link(href="about.html") О бюро
                     li.header__navbar-item
                         a.header__navbar-link(href="contact.html") Контакты
-                .d-flex.mt-2
-                    .header__lang(data-href="en") EN
-                    .header__lang.header__lang--active(data-href="ru") РУС
             .header__nav-col
                 p.mb-1.text-bold Как нас найти?
                 p.mb-3 191186, Санкт-Петербург, Марсово Поле, д.3, оф. 22Н, лит.А
