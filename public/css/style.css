@@ -2976,7 +2976,6 @@ table th, table td {
   }
   .header__lang-group {
     right: 0px;
-    top: 70px;
   }
   .header__btn {
     margin-bottom: 0;
@@ -3010,6 +3009,9 @@ table th, table td {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
+  }
+  .header_index__lang-group {
+    top: 70px;
   }
 }
 
